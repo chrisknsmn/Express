@@ -100,3 +100,69 @@ npm start
 This will return the following in the console. 
 
 > SERVER IS RUNNING ON PORT 3000
+
+### Adding Mock Data
+This resource will be used to generate example json data https://www.mockaroo.com/.
+- remove id and gender 
+- crate 25 rows
+- change format to json 
+- download data 
+- change file name to mock.json
+- create data folder in project folder
+- add mock.json to data folder
+Add data
+In index.json add data with on line second line below 'import express'.
+```
+import express from "express";
+import data from './data/mock.json' assert { type: "json" };
+```
+We will add CRUD(Create, Read, Update and Delete) functionality with the following block added below 'const PORT = 3000;' and above 'app.listen'.
+```
+//GET
+app.get('/', (request, response) => {
+    // response.send('This is a GET request at /')
+    response.json(data);
+})
+//POST
+app.post('/create', (request, response) => {
+    response.send('This is a POST request at /create')
+})
+//PUT
+app.put('/edit', (request, response) => {
+    response.send('This is a PUT request at /edit')
+})
+//DELETE
+app.delete('/delete', (request, response) => {
+    response.send('This is a DELETE request at /delete')
+})
+```
+*These updated can be tested with postman.
+
+### Access static files
+
+Create 'public' and 'images' folders in the project's main directory. Then add the following below 'const PORT = 3000;'.
+```
+//Using the public folder at project root
+app.use(express.static("public"))
+//Using the images folder at the route /images
+app.use('/images', express.static('images'))
+```
+This will include access to the 'public' and 'images' folders. This will allow access to the mountains_2.jpeg image.
+
+> http://localhost:3000/images/mountains_2.jpeg
+
+### Express Routing
+
+Access students in the mock.json file by id.
+
+```
+//Get with routing parameters
+app.get("/class/:id", (request, response) => {
+    // console.log(request.params);
+    //save id and convert from string to number. Responses are string by default.
+    const studentId = Number(request.params.id);
+    // => returns without explicitly typing return
+    const student = data.filter((student) => student.id === studentId)
+    response.send(student); 
+});
+```
