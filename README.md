@@ -1,22 +1,33 @@
 # Express
 This is a template detailing common applications of the Node.js framework Express.
 
+## Install and run template
+
+In the project folder run:
+```
+npm install
+npm start
+```
+*To avoid ESM error switch ton the Current version of node.
+
+> https://github.com/nodejs/node/issues/27441
+
 Documentation:
 
 > http://expressjs.com/
 
-## Express generator
+### Express generator
 
 > https://expressjs.com/en/starter/generator.html
 
-## Create Express project
+### Create Express project
 In a terminal run the following commands:
 ```
 mkdir express
 cd express
 npm init
 ```
-Keep default npm settings
+This will create and move to the new 'express' project folder. It will then initialize the project with npm. Keep the default npm settings to match this example.
 
 Installing nodemon and babel:
 ```
@@ -46,6 +57,9 @@ In package.json update "scripts". This will run the project with babel when star
   "start": "nodemon --experimental-json-modules --exec babel-node index.js"
 },
 ```
+*To debug modile errors use the Current version of node.
+
+> https://github.com/nodejs/node/issues/27441
 
 Create index.js (This js file can have any name but must match the reference on the 'start' lines in the package.json file).
 Populate the index.js file. 
@@ -68,7 +82,3 @@ npm start
 This will return the following in the console. 
 
 > SERVER IS RUNNING ON PORT 3000
-
-
-
-
