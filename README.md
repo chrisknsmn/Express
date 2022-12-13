@@ -23,11 +23,15 @@ Get first class member by id here:
 
 > http://localhost:3000/class/1
 
-Express documentation:
+Get image in images folder here:
 
-> http://expressjs.com/
+> http://localhost:3000/images/mountains_2.jpeg
 
 ## Create Express Template
+
+### Express documentation
+
+> http://expressjs.com/
 
 ### Express generator
 
