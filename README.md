@@ -12,15 +12,17 @@ npm start
 
 > https://github.com/nodejs/node/issues/27441
 
-Documentation:
+Express documentation:
 
 > http://expressjs.com/
+
+## Create Express Template
 
 ### Express generator
 
 > https://expressjs.com/en/starter/generator.html
 
-### Create Express project
+### Express Template without Generator 
 In a terminal run the following commands:
 ```
 mkdir express
