@@ -12,7 +12,7 @@ npm start
 
 > https://github.com/nodejs/node/issues/27441
 
-The template will be running on prt 3000:
+The template will be running on port 3000:
 
 > http://localhost:3000/
 
